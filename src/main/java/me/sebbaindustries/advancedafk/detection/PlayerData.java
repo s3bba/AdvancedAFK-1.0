@@ -1,5 +1,6 @@
 package me.sebbaindustries.advancedafk.detection;
 
+import me.sebbaindustries.advancedafk.Core;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
@@ -17,6 +18,14 @@ public class PlayerData {
     public static HashMap<Player, Storage> playerStorageHashMap = new HashMap<>();
 
     public List<Player> kickList = new ArrayList<>();
+
+    public static boolean getStatus(final Player player) {
+        return playerStorageHashMap.get(player).afkTime >= Core.gCore.settings.kickTime;
+    }
+
+    public static int getAFKTime(final Player player) {
+        return playerStorageHashMap.get(player).afkTime;
+    }
 
     /**
      * Updates location in storage class

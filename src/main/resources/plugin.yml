@@ -6,7 +6,8 @@ load: STARTUP
 api-version: '1.15'
 author: 'SebbaIndustries'
 description: 'Custom developed plugin based on the idea of DAY (Detect and Yeet)'
+softdepend: ["PlaceholderAPI"]
 
 commands:
   aafk:
-    description: "meh"
+    description: "meh (wdym meh? -Frcsty)"

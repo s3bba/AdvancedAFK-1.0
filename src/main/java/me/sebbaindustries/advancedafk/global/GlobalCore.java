@@ -7,6 +7,7 @@ import me.sebbaindustries.advancedafk.detection.PlayerData;
 import me.sebbaindustries.advancedafk.detection.ThreadManager;
 import me.sebbaindustries.advancedafk.lang.Lang;
 import me.sebbaindustries.advancedafk.listeners.ListenerManager;
+import me.sebbaindustries.advancedafk.placeholderapi.Placeholders;
 import me.sebbaindustries.advancedafk.utils.FileManager;
 import me.sebbaindustries.advancedafk.utils.Message;
 import me.sebbaindustries.advancedafk.utils.Settings;
@@ -30,6 +31,7 @@ public class GlobalCore {
     public final ListenerManager listenerManager;
     public final PlayerData playerData;
     public final ThreadManager threadManager;
+    public final Placeholders placeholders;
 
     /**
      * @param core Core.class
@@ -49,6 +51,7 @@ public class GlobalCore {
         playerData = new PlayerData();
         threadManager = new ThreadManager();
         settings = new Settings();
+        placeholders = new Placeholders();
     }
 
 }

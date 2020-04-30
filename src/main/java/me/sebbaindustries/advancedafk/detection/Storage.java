@@ -1,5 +1,8 @@
 package me.sebbaindustries.advancedafk.detection;
 
+import me.sebbaindustries.advancedafk.Core;
+import org.bukkit.entity.Player;
+
 /**
  * @author sebbaindustries
  * @version 1.0
