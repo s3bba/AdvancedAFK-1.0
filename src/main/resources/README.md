@@ -1,8 +1,18 @@
-#AdvancedAFK
-#####v0.0.1-Alpha
-#####Developed by SebbaIndustries
-#####Website: http://sebbaindustries.com
-#####Source code: https://github.com/SebbaIndustries/AdvancedAFK
+AdvancedAFK
+===========
+
+High performance Anti AFK plugin.
+
+Info:
+------
+v0.0.1-Alpha
+
+Developed by SebbaIndustries
+
+Website: http://sebbaindustries.com
+
+Source code: https://github.com/SebbaIndustries/AdvancedAFK
+
 
 ```
     AdvancedAFK a Plugin By SebbaIndustries
