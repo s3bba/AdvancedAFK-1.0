@@ -3,7 +3,7 @@ AdvancedAFK
 
 High performance Anti AFK plugin.
 
-Info:
+Info
 ------
 v0.0.1-Alpha
 
