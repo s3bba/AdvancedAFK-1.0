@@ -1,0 +1,12 @@
+name: 'AdvancedAFK'
+version: ${project.version}
+main: me.sebbaindustries.advancedafk.Core
+prefix: 'AAFK'
+load: STARTUP
+api-version: '1.15'
+author: 'SebbaIndustries'
+description: 'Custom developed plugin based on the idea of DAY (Detect and Yeet)'
+
+commands:
+  aafk:
+    description: "meh"

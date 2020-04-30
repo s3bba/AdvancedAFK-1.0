@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<messages>
+
+    <!--
+    ${project.name} a Plugin By SebbaIndustries
+    Version: ${project.version}
+
+    Copyright 2020 SebbaIndustries
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+    -->
+
+    <!-- [!] AND symbols (&) are not allowed so use &amp; or § [!]
+    List of Color Codes
+    &0 -> &amp;0 <-> §0 (Black)
+    &1 -> &amp;1 <-> §1 (Dark Blue)
+    &2 -> &amp;2 <-> §2 (Dark Green)
+    &3 -> &amp;3 <-> §3 (Dark Aqua)
+    &4 -> &amp;4 <-> §4 (Dark Red)
+    &5 -> &amp;5 <-> §5 (Dark Purple)
+    &6 -> &amp;6 <-> §6 (Gold)
+    &7 -> &amp;7 <-> §7 (Gray)
+    &8 -> &amp;8 <-> §8 (Dark Gray)
+    &9 -> &amp;9 <-> §9 (Blue)
+    &a -> &amp;a <-> §a (Green)
+    &b -> &amp;b <-> §b (Aqua)
+    &c -> &amp;c <-> §c (Red)
+    &d -> &amp;d <-> §d (Light Purple)
+    &e -> &amp;e <-> §e (Yellow)
+    &f -> &amp;f <-> §f (White)
+    List of Format Codes
+    &k -> &amp;k <-> §k (Obfuscated)
+    &l -> &amp;l <-> §l (Bold)
+    &m -> &amp;m <-> §m (Strikethrough)
+    &n -> &amp;n <-> §n (Underline)
+    &o -> &amp;o <-> §o (Italic)
+    &r -> &amp;r <-> §r (Reset)
+    [!] AND symbols (&) are not allowed so use &amp; or § [!] -->
+
+    <!-- Prefix for messages -->
+    <prefix>
+        <msg lang="EN">§8[§dAAFK§8]§r</msg>
+        <msg lang="SI">§8[§dAAFK§8]§r</msg>
+    </prefix>
+
+    <!-- No permission message -->
+    <message id="0">
+        <msg lang="EN" prefix="true">§7You do not have permission to execute this command!</msg>
+        <msg lang="SI" prefix="true">§7Nimas dovoljenja za uporabo te komande!</msg>
+    </message>
+
+    <!-- Console execution not supported message -->
+    <message id="1">
+        <msg lang="EN" prefix="true">§cConsole cannot be used to run this command!</msg>
+        <msg lang="SI" prefix="true">§cKonzola nemore izvesti taga ukaza!</msg>
+    </message>
+
+    <!-- Kick message -->
+    <message id="2">
+        <msg lang="EN" prefix="false">§8| §7You have been kicked for being AFK! §8|</msg>
+        <msg lang="SI" prefix="false">§8| §7Kikan si bil za AFKing! §8|</msg>
+    </message>
+
+    <!-- cleanup help message -->
+    <message id="3">
+        <msg lang="EN" prefix="true">§7Cleanup Help Message\n §8» §f/aafk -cleanup §8• §7Removes all AFK players from
+            the server\n §8» §f/aafk -cleanup -force §8• §7Disregards bypass permission!\n
+        </msg>
+        <msg lang="SI" prefix="true">§7Cleanup Help Message\n §8» §f/aafk -cleanup §8• §7Removes all AFK players from
+            the server\n §8» §f/aafk -cleanup -force §8• §7Disregards bypass permission!\n
+        </msg>
+    </message>
+
+    <!-- cleanup start message -->
+    <message id="4">
+        <msg lang="EN" prefix="true">§7AFK Player cleanup has started!</msg>
+        <msg lang="SI" prefix="true">§7AFK Player cleanup se je zacel!</msg>
+    </message>
+
+    <!-- cleanup kicked player message -->
+    <message id="5">
+        <msg lang="EN" prefix="true">§7Cleanup has removed §f%player%</msg>
+        <msg lang="SI" prefix="true">§7Cleanup je odstranil §f%player%</msg>
+    </message>
+
+    <!-- cleanup kick message -->
+    <message id="6">
+        <msg lang="EN" prefix="false">§8| §7While you were AFK, cleanup was performed and you were kicked! §8|</msg>
+        <msg lang="SI" prefix="false">§8| §7Ko ste bili AFK, je bilo izvedeno ciscenje, in ste bili kickani! §8|</msg>
+    </message>
+
+    <!-- cleanup end message -->
+    <message id="7">
+        <msg lang="EN" prefix="true">§7Cleanup has purged §f%kicked_players% §7AFK players!</msg>
+        <msg lang="SI" prefix="true">§7Cleanup je odstranil §f%kicked_players% §7AFK playerjov!</msg>
+    </message>
+
+    <!-- list help message -->
+    <message id="8">
+        <msg lang="EN" prefix="true">§7List Help Message\n §» §f/aafk -list §8• §7Lists all AFK players\n §8» §f/aafk
+            -list -all §8• §7Lists all online players\n
+        </msg>
+        <msg lang="SI" prefix="true">§7List Help Message\n §» §f/aafk -list §8• §7Lists all AFK players\n §8» §f/aafk
+            -list -all §8• §7Lists all online players\n
+        </msg>
+    </message>
+
+    <!-- list -ls flag message -->
+    <message id="9">
+        <msg lang="EN" prefix="true">§7AFK Players §8» %list%</msg>
+        <msg lang="SI" prefix="true">§7AFK Players §8» %list%</msg>
+    </message>
+
+    <!-- list -ls -all flag message -->
+    <message id="10">
+        <msg lang="EN" prefix="true">§7AFK Players §8(§f%all_afk_players%§8)\n $pattern[ §8» §f%afk_player0%§8,
+            §f%afk_playerN%]\n
+            §7Active players §8(§f%all_active_players%§8)\n $pattern[ §8» §f%active_player0%§8, §f%active_playerN%]\n
+        </msg>
+        <msg lang="SI" prefix="true">§7AFK Players §8(§f%all_afk_players%§8)\n $pattern[ §8» §f%afk_player0%§8,
+            §f%afk_playerN%]\n
+            §7Active players §8(§f%all_active_players%§8)\n $pattern[ §8» §f%active_player0%§8, §f%active_playerN%]\n
+        </msg>
+    </message>
+
+    <!-- list no players afk message -->
+    <message id="11">
+        <msg lang="EN" prefix="true">§7There are currently no AFK players!</msg>
+        <msg lang="SI" prefix="true">§7Trenutno ni AFK igralcev!</msg>
+    </message>
+
+    <!-- reload start message -->
+    <message id="12">
+        <msg lang="EN" prefix="true">§7Plugin reload has started!</msg>
+        <msg lang="SI" prefix="true">§7Plugin reload se je zacel!</msg>
+    </message>
+
+    <!-- reload success message -->
+    <message id="13">
+        <msg lang="EN" prefix="true">§7Plugin reload was successful! Finished in §f%time%§7ms</msg>
+        <msg lang="SI" prefix="true">§7Plugin reload je bil uspesen! Koncano v §f%time%§7ms</msg>
+    </message>
+
+    <!-- reload failed message -->
+    <message id="14">
+        <msg lang="EN" prefix="true">§cPlugin reload was unsuccessful. Please check console!</msg>
+        <msg lang="SI" prefix="true">§cPlugin reload ni bil uspesen. Prosim poglej conzolo!</msg>
+    </message>
+
+    <!-- debug/lookup target not found message -->
+    <message id="15">
+        <msg lang="EN" prefix="true">§7Could not find specified player!</msg>
+        <msg lang="SI" prefix="true">§7Ni mogoce najti izbranega igralca!</msg>
+    </message>
+
+    <!-- lookup/debug target is not specified message -->
+    <message id="16">
+        <msg lang="EN" prefix="true">§7Please specify a target!</msg>
+        <msg lang="SI" prefix="true">§7Prosim izberi tarco!</msg>
+    </message>
+
+    <!-- lookup/debug missing arguments message -->
+    <message id="17">
+        <msg lang="EN" prefix="true">§7Missing specification arguments!</msg>
+        <msg lang="SI" prefix="true">§7Prosim izberi argumente!</msg>
+    </message>
+
+    <!-- lookup help message -->
+    <message id="18">
+        <msg lang="EN" prefix="true">§7Lookup Help Message\n §8» §f/aafk -lookup -p (player) §8• §7Looks up the
+            specified players status\n
+        </msg>
+        <msg lang="SI" prefix="true">§7Lookup Help Message\n §8» §f/aafk -lookup -p (player) §8• §7Looks up the
+            specified players status\n
+        </msg>
+    </message>
+
+    <!-- lookup message -->
+    <message id="19">
+        <msg lang="EN" prefix="true">§7Player§8: §f%player% §7is currently %status% §8(§f%time%s§8)</msg>
+        <msg lang="SI" prefix="true">§7Player§8: §f%player% §7je trenutno %status% §8(§f%time%s§8)</msg>
+    </message>
+
+    <!-- debug help message -->
+    <message id="20">
+        <msg lang="EN" prefix="true">§7Debug Help Message\b §8» §f/aafk -debug -p (player) §8• §7Shows debug for
+            specified player\n
+        </msg>
+        <msg lang="SI" prefix="true">§7Debug Help Message\b §8» §f/aafk -debug -p (player) §8• §7Shows debug for
+            specified player\n
+        </msg>
+    </message>
+
+</messages>

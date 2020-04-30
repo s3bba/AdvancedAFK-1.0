@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+     _____   _                       _    _____ _____ _____
+    |  _  |_| |_ _ ___ ___ ___ ___ _| |  |  _  |   __|  |  |
+    |     | . | | | .'|   |  _| -_| . |  |     |   __|    -|
+    |__|__|___|\_/|__,|_|_|___|___|___|  |__|__|__|  |__|__|
+
+    file: settings.xml
+
+    ${project.name} a Plugin By SebbaIndustries
+    Version: ${project.version}
+
+    Copyright 2020 SebbaIndustries
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+    Here you can configure the plugins detection settings,
+    to however you wish, but the weary that the detection system
+    is fragile and may throw false positives if you do not
+    configure it properly!
+
+    Below you can see the default detection settings the plugin
+    comes with, this may work on your server, however it is dependant
+    on the gamemode, and game style of your players!
+    (ie. the detection settings would be different for a Survival
+    gamemode, as aposed to other types of gamemodes!)
+
+    setting meanings:
+     - "trail": The keyword 'trail' can be found in the <detection>
+                section of the settings and defines how many player locations
+                the plugin should store per player (1s = 1 trail)
+                The greater the value the better the detection, but so is
+                the server strain! (default is '16')
+
+     - "points": The keyword 'points' can be found in the <detection> section
+                 of the settings and defines how many true positives (the amount
+                 of times the user can be tagged before being kicked!)
+                 (default is '10')
+
+     - "locations"
+
+            - "min": Takes the smallest location difference from the entire
+                     storage of the player, and compares it to the average
+                     which was calculated 'trail' (default being 16) seconds ago
+
+            - "max": Does the same thing as the min, however takes the highest
+                     location difference instead of the smallest and compares
+                     it to the average calculated 'trail' ago
+
+            - "avg": Takes every location and compares it to the locations gathered
+                     'trail' ago (default being 16)
+
+     - "time": The keyword 'time' can be found in the <kick> section
+               of the settings and defines how long the AFK session
+               timer should last! (default is '600')
+
+     - "online": The keyword 'online' can also be found in the <kick>
+                 section of the settings and defines the amount of players
+                 required for the plugin to start checking for player inactivity
+                 (default is '20')
+-->
+
+<settings>
+    <detection trail="16" points="10">
+        <x min="4" max="4" avg="5"/>
+        <y min="2" max="2" avg="3"/>
+        <z min="5" max="5" avg="5"/>
+        <yaw min="7" max="7" avg="10"/>
+        <pitch min="7" max="7" avg="10"/>
+    </detection>
+
+    <kick time="600">
+        <players online="20"/>
+    </kick>
+
+</settings>
