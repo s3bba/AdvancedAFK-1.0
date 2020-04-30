@@ -2,7 +2,7 @@
 #####v0.0.1-Alpha
 #####Developed by SebbaIndustries
 #####Website: http://sebbaindustries.com
-#####Source code: TODO add GitHub Link
+#####Source code: https://github.com/SebbaIndustries/AdvancedAFK
 
 ```
     AdvancedAFK a Plugin By SebbaIndustries
