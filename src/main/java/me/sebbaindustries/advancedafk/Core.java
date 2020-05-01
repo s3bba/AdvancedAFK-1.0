@@ -1,6 +1,7 @@
 package me.sebbaindustries.advancedafk;
 
 import me.sebbaindustries.advancedafk.global.GlobalCore;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -68,6 +69,10 @@ public class Core extends JavaPlugin {
         gCore.lang.LANG = gCore.fileManager.getConfiguration().getString("language");
         gCore.settings.reloadSettings();
         gCore.message.reloadMessages();
+
+        if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            gCore.placeholders.register();
+        }
     }
 
 }

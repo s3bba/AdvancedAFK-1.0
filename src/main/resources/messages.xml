@@ -122,9 +122,10 @@
 
     <!-- list -ls -all flag message -->
     <message id="10">
-        <msg lang="EN" prefix="true">§7AFK Players §8(§f%all_afk_players%§8)\n $pattern[ §8» §f%afk_player0%§8,
-            §f%afk_playerN%]\n
-            §7Active players §8(§f%all_active_players%§8)\n $pattern[ §8» §f%active_player0%§8, §f%active_playerN%]\n
+        <msg lang="EN" prefix="true">§7List of players: §f[§aActive§f] §f[§eTimed§f] §f[§cAFK§f] \n
+            §8» %active_players% \n
+            §8» %timed_players% \n
+            §8» %afk_players%
         </msg>
         <msg lang="SI" prefix="true">§7AFK Players §8(§f%all_afk_players%§8)\n $pattern[ §8» §f%afk_player0%§8,
             §f%afk_playerN%]\n
