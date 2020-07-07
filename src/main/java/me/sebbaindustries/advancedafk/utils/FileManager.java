@@ -14,7 +14,7 @@ import java.util.Objects;
  * @version 1.0
  * @see me.sebbaindustries.advancedafk.global.GlobalCore
  */
-public class FileManager {
+public final class FileManager {
 
     private final Core core;
 
@@ -33,7 +33,7 @@ public class FileManager {
     /**
      * Generates README.md File
      */
-    public void generateREADME() {
+    private void generateREADME() {
         File README = new File(core.getDataFolder(), "README.md");
 
         if (!README.exists()) {
@@ -45,12 +45,12 @@ public class FileManager {
     messages.xml file
      */
 
-    public File messages;
+    File messages;
 
     /**
      * Generates messages.xml File
      */
-    public void generateMessages() {
+    private void generateMessages() {
         if (messages == null) {
             messages = new File(core.getDataFolder(), "messages.xml");
         }
@@ -63,12 +63,12 @@ public class FileManager {
     settings.xml
      */
 
-    public File settings;
+    File settings;
 
     /**
      * Generates settings.xml File
      */
-    public void generateSettings() {
+    private void generateSettings() {
         if (settings == null) {
             settings = new File(core.getDataFolder(), "settings.xml");
         }
@@ -87,7 +87,7 @@ public class FileManager {
     /**
      * Generates configuration.yml File
      */
-    public void generateConfiguration() {
+    private void generateConfiguration() {
         if (configuration == null) {
             configuration = new File(core.getDataFolder(), "configuration.yml");
         }
@@ -119,8 +119,8 @@ public class FileManager {
         }
         fileConfiguration = YamlConfiguration.loadConfiguration(configuration);
 
-        Reader defConfigStream = new InputStreamReader(Objects.requireNonNull(core.getResource("configuration.yml")));
-        YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
+        final Reader defConfigStream = new InputStreamReader(Objects.requireNonNull(core.getResource("configuration.yml")));
+        final YamlConfiguration defConfig = YamlConfiguration.loadConfiguration(defConfigStream);
         fileConfiguration.setDefaults(defConfig);
     }
 

@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Lookup {
+public final class Lookup {
 
     /**
      * Lookup constructor, activates on lookup flag
@@ -43,25 +43,25 @@ public class Lookup {
         }
 
         // try to extract player form arguments
-        Player target = null;
+        Player target;
         try {
             target = Bukkit.getPlayerExact(args[playerArg]);
-        } catch (NullPointerException e) {
+        } catch (final NullPointerException ignored) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.targetNotSpecified));
             return;
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (final ArrayIndexOutOfBoundsException ignored) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.missingArguments));
             return;
         }
 
         try {
             target.getName();
-        } catch (NullPointerException e) {
+        } catch (final NullPointerException ignored) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.targetNotFound));
             return;
         }
 
-        Storage storage = PlayerData.playerStorageHashMap.get(target);
+        final Storage storage = PlayerData.playerStorageHashMap.get(target);
         String status = "&aPlaying";
         if (storage.afkTime > 0) status = "&cAFK";
         sender.sendMessage(Color.chat(Core.gCore.message.getMessage(Message.M.lookup)

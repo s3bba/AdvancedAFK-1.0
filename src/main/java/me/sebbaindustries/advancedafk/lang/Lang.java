@@ -4,7 +4,7 @@ package me.sebbaindustries.advancedafk.lang;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Lang {
+public final class Lang {
 
     public String LANG = "EN";
 

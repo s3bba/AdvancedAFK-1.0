@@ -7,25 +7,26 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class PlayerData {
+public final class PlayerData {
 
     /**
      * @see Storage
-     * HashMap stores players and locations, locations are stored under Storage class
+     * Map stores players and locations, locations are stored under Storage class
      */
-    public static HashMap<Player, Storage> playerStorageHashMap = new HashMap<>();
+    public final static Map<Player, Storage> playerStorageHashMap = new HashMap<>();
 
-    public List<Player> kickList = new ArrayList<>();
+    public final List<Player> kickList = new ArrayList<>();
 
     /**
      * Updates location in storage class
      *
      * @param p Player
      */
-    public final void updateLocation(@NotNull final Player p) {
-        Location location = p.getLocation();
-        Storage storage = playerStorageHashMap.get(p);
+    final void updateLocation(@NotNull final Player p) {
+        final Location location = p.getLocation();
+        final Storage storage = playerStorageHashMap.get(p);
         storage.updateTrail(
                 location.getBlockX(),
                 location.getBlockY(),
@@ -42,7 +43,7 @@ public class PlayerData {
      * @param p Player
      * @param s Storage.class that needs to be saved
      */
-    public final void saveStorage(@NotNull final Player p, @NotNull final Storage s) {
+    private void saveStorage(@NotNull final Player p, @NotNull final Storage s) {
         playerStorageHashMap.put(p, s);
     }
 

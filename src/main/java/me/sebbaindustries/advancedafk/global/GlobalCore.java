@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
  * @author sebbaindustries
  * @version 1.0
  */
-public class GlobalCore {
+public final class GlobalCore {
 
     /*
     Global instances of classes
@@ -26,10 +26,7 @@ public class GlobalCore {
     public final Lang lang;
     public final FileManager fileManager;
     public final Message message;
-    public final CommandManager commandManager;
-    public final ListenerManager listenerManager;
     public final PlayerData playerData;
-    public final ThreadManager threadManager;
 
     /**
      * @param core Core.class
@@ -44,10 +41,10 @@ public class GlobalCore {
         lang = new Lang();
         fileManager = new FileManager(core);
         message = new Message();
-        commandManager = new CommandManager(core);
-        listenerManager = new ListenerManager(core);
+        new CommandManager(core);
+        new ListenerManager(core);
         playerData = new PlayerData();
-        threadManager = new ThreadManager();
+        new ThreadManager();
         settings = new Settings();
     }
 

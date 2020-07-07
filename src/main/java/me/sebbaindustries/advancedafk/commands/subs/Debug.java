@@ -17,7 +17,7 @@ import java.util.Arrays;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Debug {
+public final class Debug {
 
     /**
      * Debug constructor, activates on debug flag
@@ -44,25 +44,25 @@ public class Debug {
             }
         }
         // try to extract player form arguments
-        Player target = null;
+        Player target;
         try {
             target = Bukkit.getPlayerExact(args[playerArg]);
-        } catch (NullPointerException e) {
+        } catch (final NullPointerException ignored) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.targetNotSpecified));
             return;
-        } catch (ArrayIndexOutOfBoundsException e) {
+        } catch (final ArrayIndexOutOfBoundsException ignored) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.missingArguments));
             return;
         }
 
         try {
             target.getName();
-        } catch (NullPointerException e) {
+        } catch (final NullPointerException ignored) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.targetNotFound));
             return;
         }
 
-        Storage storage = PlayerData.playerStorageHashMap.get(target);
+        final Storage storage = PlayerData.playerStorageHashMap.get(target);
 
         // send all data to sender
         sender.sendMessage(Color.chat("&8[&dAAFK&8] &7Debugging Player &8: &f" + target.getName()));

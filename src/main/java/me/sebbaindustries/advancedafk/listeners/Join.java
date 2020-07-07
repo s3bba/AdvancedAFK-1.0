@@ -12,7 +12,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Join implements Listener {
+public final class Join implements Listener {
 
     /**
      * Activates when player Joins
@@ -20,9 +20,9 @@ public class Join implements Listener {
      * @param e Event
      */
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
+    public void onPlayerJoin(final PlayerJoinEvent e) {
         Player p = e.getPlayer();
-        // put player into hashmap
+        // put player into map
         PlayerData.playerStorageHashMap.put(p, new Storage(Core.gCore.settings.trail));
     }
 

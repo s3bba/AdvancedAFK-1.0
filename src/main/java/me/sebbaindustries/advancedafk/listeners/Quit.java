@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Quit implements Listener {
+public final class Quit implements Listener {
 
     /**
      * Activates when player quits
@@ -18,9 +18,9 @@ public class Quit implements Listener {
      * @param e Event
      */
     @EventHandler
-    public void onPlayerQuit(PlayerQuitEvent e) {
+    public void onPlayerQuit(final PlayerQuitEvent e) {
         Player p = e.getPlayer();
-        // remove player from hashmap
+        // remove player from map
         PlayerData.playerStorageHashMap.remove(p);
     }
 

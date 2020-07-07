@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Help {
+public final class Help {
 
     /**
      * Help constructor, activates on help flag

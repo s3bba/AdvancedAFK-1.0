@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
  * @author sebbaindustries
  * @version 1.0
  */
-public class List {
+public final class List {
 
     /**
      * List constructor, activates on list flag
@@ -32,14 +32,14 @@ public class List {
         }
 
 
-        String message = Core.gCore.message.getMessage(Message.M.listLS_Flag);
+        final String message = Core.gCore.message.getMessage(Message.M.listLS_Flag);
         if (Core.gCore.playerData.kickList.size() == 0) {
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.listNoPlayers));
             return;
         }
         String temp = "";
-        for (Player p : Core.gCore.playerData.kickList) {
-            temp = temp + "&f" + p.getName() + "&8, ";
+        for (final Player p : Core.gCore.playerData.kickList) {
+            temp = temp.concat("&f" + p.getName() + "&8, ");
         }
         // apache thanks for string utils <3
         sender.sendMessage(Color.chat(message.replace("%list%", StringUtils.chop(temp))));

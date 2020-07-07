@@ -6,9 +6,9 @@ import org.bukkit.ChatColor;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Color {
+public final class Color {
 
-    public static String chat(String s) {
+    public static String chat(final String s) {
         return ChatColor.translateAlternateColorCodes('&', s);
     }
 }

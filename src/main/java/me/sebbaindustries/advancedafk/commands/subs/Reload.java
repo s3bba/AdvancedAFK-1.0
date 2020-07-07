@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Reload {
+public final class Reload {
 
     /**
      * Reload constructor, activates on reload flag
@@ -29,7 +29,7 @@ public class Reload {
         }
 
         // check current time
-        long time = System.currentTimeMillis();
+        final long time = System.currentTimeMillis();
 
         sender.sendMessage(Core.gCore.message.getMessage(Message.M.reloadStart));
 
@@ -40,14 +40,14 @@ public class Reload {
             Core.gCore.lang.LANG = Core.gCore.fileManager.getConfiguration().getString("language");
             Core.gCore.settings.reloadSettings();
             Core.gCore.message.reloadMessages();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (final Exception ex) {
+            ex.printStackTrace();
             sender.sendMessage(Core.gCore.message.getMessage(Message.M.reloadFailed));
         }
         // calculate reload time
-        Long reloadTime = System.currentTimeMillis() - time;
+        final Long reloadTime = System.currentTimeMillis() - time;
         // prepare message
-        String message = Core.gCore.message.getMessage(Message.M.reloadEnd).replace("%time%", String.valueOf(reloadTime));
+        final String message = Core.gCore.message.getMessage(Message.M.reloadEnd).replace("%time%", String.valueOf(reloadTime));
         sender.sendMessage(message);
     }
 

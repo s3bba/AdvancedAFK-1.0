@@ -13,7 +13,7 @@ import java.util.List;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Cleanup {
+public final class Cleanup {
 
     private CommandSender sender;
     private int kickCounter;
@@ -35,7 +35,7 @@ public class Cleanup {
         }
 
         // check for -f (force) flag
-        boolean force = useForce(args);
+        final boolean force = useForce(args);
         // check if sender has permission to use force flag
         if (force) {
             if (!sender.hasPermission("aafk.flag.cleanup.force") || !sender.hasPermission("aafk.*")) {
@@ -50,18 +50,15 @@ public class Cleanup {
         // start cleanup
         sender.sendMessage(Core.gCore.message.getMessage(Message.M.cleanupStart));
 
-        List<Player> copiedKickList = Core.gCore.playerData.kickList;
-        for (int counter = 0; counter < copiedKickList.size(); counter++) {
-            Player p = copiedKickList.get(counter);
-
-            // force, dont check permissions for players just kick
+        final List<Player> copiedKickList = Core.gCore.playerData.kickList;
+        copiedKickList.forEach(player ->
+        {
             if (force) {
-                kickPlayer(p);
-                // normal cleanup check for perms
-            } else if (!p.hasPermission("aafk.*") || !p.hasPermission("aafk.kick.bypass.cleanup")) {
-                kickPlayer(p);
+                kickPlayer(player);
+            } else if (!player.hasPermission("aafk.*") || !player.hasPermission("aafk.kick.bypass.cleanup")) {
+                kickPlayer(player);
             }
-        }
+        });
         // end cleanup
         sender.sendMessage(Core.gCore.message.getMessage(Message.M.cleanupEnd).replace("%kicked_players%", String.valueOf(kickCounter)));
     }
@@ -72,8 +69,10 @@ public class Cleanup {
      * @param p Player
      * @see me.sebbaindustries.advancedafk.detection.PlayerData
      */
-    private void kickPlayer(Player p) {
-        if (p == sender) return;
+    private void kickPlayer(final Player p) {
+        if (p == sender) {
+            return;
+        }
         p.kickPlayer(Core.gCore.message.getMessage(Message.M.cleanupKick));
         Core.gCore.playerData.kickList.remove(p);
         sender.sendMessage(Core.gCore.message.getMessage(Message.M.cleanupKickedPlayer).replace("%player%", p.getName()));
@@ -88,7 +87,7 @@ public class Cleanup {
      */
     private boolean useForce(final String[] args) {
         boolean force = false;
-        for (String arg : args) {
+        for (final String arg : args) {
             if (arg.toLowerCase().contains("-force") || arg.contains("-f")) {
                 force = true;
                 break;

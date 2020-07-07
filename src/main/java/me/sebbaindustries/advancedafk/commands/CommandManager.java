@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import java.util.Objects;
 
-public class CommandManager implements CommandExecutor, TabCompleter {
+public final class CommandManager implements CommandExecutor, TabCompleter {
 
     private final CommandParser parser;
 
@@ -20,9 +20,9 @@ public class CommandManager implements CommandExecutor, TabCompleter {
      *
      * @param core Main class
      */
-    public CommandManager(@NotNull Core core) {
-        Objects.requireNonNull(core.getCommand("aafk")).setExecutor(this::onCommand);
-        Objects.requireNonNull(Bukkit.getPluginCommand("aafk")).setTabCompleter(this::onTabComplete);
+    public CommandManager(@NotNull final Core core) {
+        Objects.requireNonNull(core.getCommand("aafk")).setExecutor(this);
+        Objects.requireNonNull(Bukkit.getPluginCommand("aafk")).setTabCompleter(this);
         parser = new CommandParser();
     }
 

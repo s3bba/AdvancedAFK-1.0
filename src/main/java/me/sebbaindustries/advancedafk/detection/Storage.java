@@ -4,7 +4,7 @@ package me.sebbaindustries.advancedafk.detection;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Storage {
+public final class Storage {
 
     public int afkTime = 0;
 
@@ -38,7 +38,7 @@ public class Storage {
      *
      * @param trailLength Length of the trail that player will leave behind
      */
-    public Storage(int trailLength) {
+    public Storage(final int trailLength) {
         this.trailLength = trailLength;
         trailX = new int[trailLength];
         trailY = new int[trailLength];

@@ -22,7 +22,7 @@ import org.bukkit.plugin.java.JavaPlugin;
  * @version 1.0
  * @see org.bukkit.plugin.Plugin As plugin interface
  */
-public class Core extends JavaPlugin {
+public final class Core extends JavaPlugin {
 
     /**
      * @see GlobalCore

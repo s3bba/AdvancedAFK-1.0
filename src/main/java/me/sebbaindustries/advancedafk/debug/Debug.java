@@ -1,6 +1,6 @@
 package me.sebbaindustries.advancedafk.debug;
 
-public class Debug {
+public final class Debug {
 
     public boolean useDebug = false;
 }

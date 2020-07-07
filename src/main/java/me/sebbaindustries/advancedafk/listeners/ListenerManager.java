@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
  * @author sebbaindustries
  * @version 1.0
  */
-public class ListenerManager {
+public final class ListenerManager {
 
     /**
      * Register listeners on call

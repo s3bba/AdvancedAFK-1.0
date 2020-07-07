@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
  * @author sebbaindustries
  * @version 1.0
  */
-public class Analysis {
+class Analysis {
 
     private int trailLength;
     private int[] trailX;
@@ -21,20 +21,20 @@ public class Analysis {
     private int avgDistanceTrailZ;
     private int avgMoveTrailYaw;
     private int avgMoveTrailPitch;
-    int maxX;
-    int minX;
-    int maxY;
-    int minY;
-    int maxZ;
-    int minZ;
-    int maxYaw;
-    int minYaw;
-    int maxPitch;
-    int minPitch;
+    private int maxX;
+    private int minX;
+    private int maxY;
+    private int minY;
+    private int maxZ;
+    private int minZ;
+    private int maxYaw;
+    private int minYaw;
+    private int maxPitch;
+    private int minPitch;
 
-    public void startAnalysis(final Player p) {
+    void startAnalysis(final Player p) {
         this.p = p;
-        Storage storage = PlayerData.playerStorageHashMap.get(p);
+        final Storage storage = PlayerData.playerStorageHashMap.get(p);
         this.trailLength = storage.trailLength;
         this.trailX = storage.getTrailX();
         this.trailY = storage.getTrailY();
@@ -48,7 +48,7 @@ public class Analysis {
         trailCalculation(storage);
     }
 
-    private void trailCalculation(Storage storage) {
+    private void trailCalculation(final Storage storage) {
         // initialize them with 0
         avgDistanceTrailX = 0;
         avgDistanceTrailY = 0;
@@ -119,7 +119,7 @@ public class Analysis {
         storage.minPitch = this.minPitch;
     }
 
-    private void trailAnalysis(Storage storage) {
+    private void trailAnalysis(final Storage storage) {
         // get max values
         int xMax = Math.abs(storage.maxX - this.maxX);
         int yMax = Math.abs(storage.maxY - this.maxY);
@@ -196,7 +196,7 @@ public class Analysis {
         removeFromAfkList();
     }
 
-    private void addToAfkList(Storage storage) {
+    private void addToAfkList(final Storage storage) {
         if (!(storage.afkTime >= Core.gCore.settings.kickTime)) return;
         if (!Core.gCore.playerData.kickList.contains(p)) Core.gCore.playerData.kickList.add(p);
     }

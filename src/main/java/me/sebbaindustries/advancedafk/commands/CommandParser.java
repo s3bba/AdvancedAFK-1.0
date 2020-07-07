@@ -5,7 +5,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
 
-public class CommandParser {
+final class CommandParser {
 
     private static CommandSender sender;
     private static Command command;
@@ -21,7 +21,7 @@ public class CommandParser {
      * @param args    Arguments for parsing
      * @return Flag, if flags are not presented help flag is returned
      */
-    public final Flags parse(final @NotNull CommandSender sender, final @NotNull Command command, final @NotNull String label, final String[] args) {
+    final Flags parse(final @NotNull CommandSender sender, final @NotNull Command command, final @NotNull String label, final String[] args) {
 
         CommandParser.sender = sender;
         CommandParser.command = command;
@@ -85,7 +85,7 @@ public class CommandParser {
 
         public abstract void execute();
 
-        Flags(String flag, String alias) {
+        Flags(final String flag, final String alias) {
             this.flag = flag;
             this.alias = alias;
         }

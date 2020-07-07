@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.CompletableFuture;
 
-public class ThreadManager extends Analysis {
+public final class ThreadManager extends Analysis {
 
     private int analysisClock = 0;
 
@@ -18,7 +18,7 @@ public class ThreadManager extends Analysis {
         initializeLoop();
     }
 
-    protected void initializeLoop() {
+    private void initializeLoop() {
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
@@ -31,7 +31,7 @@ public class ThreadManager extends Analysis {
 
     private void loopOnlinePlayers() {
         CompletableFuture.runAsync(() -> {
-            for (Player p : Bukkit.getOnlinePlayers()) {
+            for (final Player p : Bukkit.getOnlinePlayers()) {
                 // Update players location
                 Core.gCore.playerData.updateLocation(p);
                 /*
@@ -52,8 +52,8 @@ public class ThreadManager extends Analysis {
         // check for online players
         if (!(Bukkit.getOnlinePlayers().size() >= Core.gCore.settings.maxOnlinePlayers)) return;
         // copy kick list (less problems)
-        List<Player> copiedKickList = Core.gCore.playerData.kickList;
-        for (Player p : copiedKickList) {
+        final List<Player> copiedKickList = Core.gCore.playerData.kickList;
+        for (final Player p : copiedKickList) {
             // because we are running async we need to tell server thread do kick players
             Bukkit.getScheduler().runTask(Core.getPlugin(Core.class), () -> {
                 if (!p.hasPermission("aafk.*") || !p.hasPermission("aafk.kick.bypass")) {

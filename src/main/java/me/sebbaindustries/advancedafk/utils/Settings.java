@@ -15,7 +15,7 @@ import java.io.FileReader;
  * @see XMLInputFactory as File factory
  * @see XMLStreamReader as stream reader for XML file
  */
-public class Settings {
+public final class Settings {
 
     /**
      * Prepares XML file and tries to find elementName (<b>>tag<</b>) and attributeName(<tag <b>attr="value"</b>)
@@ -26,8 +26,8 @@ public class Settings {
      */
     private String prepareXML(@NotNull final String elementName, @NotNull final String attributeName) {
         try {
-            XMLInputFactory iFactory = XMLInputFactory.newInstance();
-            XMLStreamReader sReader = iFactory.createXMLStreamReader(new FileReader(Core.gCore.fileManager.settings));
+            final XMLInputFactory iFactory = XMLInputFactory.newInstance();
+            final XMLStreamReader sReader = iFactory.createXMLStreamReader(new FileReader(Core.gCore.fileManager.settings));
             while (sReader.hasNext()) {
                 //Move to next event
                 sReader.next();
@@ -49,8 +49,8 @@ public class Settings {
             sReader.close();
             // Tag or attribute not found
             return "$ERROR_NOT_FOUND";
-        } catch (XMLStreamException | FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (final XMLStreamException | FileNotFoundException ex) {
+            ex.printStackTrace();
             return "$ERROR_STACK";
         }
     }
