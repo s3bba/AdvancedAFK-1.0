@@ -1,0 +1,38 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+	id "com.github.johnrengelman.shadow" version "6.0.0"
+	id "java"
+}
+
+group = "me.sebbaindustries"
+version = "0.0.1-Alpha"
+
+repositories {
+	mavenLocal()
+	maven { url "https://oss.sonatype.org/content/groups/public/" }
+	maven { url "https://papermc.io/repo/repository/maven-public/" }
+}
+
+dependencies {
+	implementation "org.jetbrains:annotations:+"
+	testImplementation "junit:junit:4.13.1"
+	
+	compileOnly "com.destroystokyo.paper:paper-api:1.16.3-R0.1-SNAPSHOT"
+}
+
+shadowJar {
+	archiveFileName.set("AdvancedAFK-${version}.jar")
+}
+
+processResources {
+	from(sourceSets.main.resources.srcDirs) {
+		filter ReplaceTokens, tokens: [version: version]
+	}
+}
+
+def compatibilityVersion = JavaVersion.VERSION_1_8
+
+sourceCompatibility = compatibilityVersion
+targetCompatibility = compatibilityVersion
+
